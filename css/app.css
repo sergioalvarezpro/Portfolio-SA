@@ -1,0 +1,755 @@
+@charset "UTF-8";
+/*
+
+  Con este reset vamos a resolver:
+    👉 Unificar el uso de Custom Properties
+    👉 Problemas de box-model más generales
+    👉 Problemas con imagenes, vídeos e iconos svg
+    👉 Problemas con tipografías y etiquetas input en formularios
+    👉 Unificar la tipografía de todas las etiquetas de una web
+
+*/
+/* Aquí definimos las Custom properties */
+:root {
+  --gris-med: #A8B2D1;
+  /*Iconos RRSS, email*/
+  --gris-light: #CCD6F6;
+  /*titular, h1, h2, h3*/
+  --gris-dark: #8892B0;
+  /*texto*/
+  --azul-dark: #112240;
+  /*background tarjetas descripción proyecto*/
+  --azul-med: #233554;
+  /*hover button trabajos*/
+  --azul: #0A192F;
+  /*body*/
+  --azul-085: rgba(10, 25, 47, .85);
+  /*Header*/
+  --verde: #64ffda;
+  /*Color Coorporativo*/
+  --verde-1: rgba(100, 255, 218, .1);
+  --blanco: #ececec;
+  --negro: #181818;
+  /* Tipografía */
+  --tipo-principal: "Inter", sans-serif;
+  --tipo-secundario: "Roboto Mono", monospace;
+}
+
+/* Las adaptamos al modo claro */
+/* @media (prefers-color-scheme: light) {
+  :root {
+    --blanco: #181818;
+    --blanco-2: rgba(0, 0, 0, .2);
+    --negro: #e0e0e0;
+    --negro-5: rgba(255, 255, 255, 0.5);
+    --negro-7: rgba(255, 255, 255, 0.75);
+  }
+} */
+/* Las adaptamos al modo oscuro */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;     
+    --blanco  : #181818;
+    --gris    : grey;
+  }
+}
+
+/* Opcional */
+/* Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+/* Opcional */
+/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+    animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* opcional */
+  -o-object-fit: cover;
+  object-fit: cover;
+  /* opcional */
+  -o-object-position: center center;
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* (Probándolo, no usar en producción) En el caso de añadir una  */
+/* p svg{
+  display: inline;
+  width: initial;
+} */
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  color: var(--blanco);
+  /* opcional */
+  line-height: 1.4em;
+  /* opcional */
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
+  counter-reset: item;
+  background-color: var(--azul);
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-property: opacity, -webkit-filter;
+  transition-property: opacity, -webkit-filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: var(--verde);
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: var(--verde);
+  border-radius: 4px;
+  position: absolute;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+ * Spin
+ */
+.hamburger--spin .hamburger-inner {
+  -webkit-transition-duration: 0.22s;
+          transition-duration: 0.22s;
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--spin .hamburger-inner::before {
+  -webkit-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+.hamburger--spin .hamburger-inner::after {
+  -webkit-transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--spin.is-active .hamburger-inner {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  -webkit-transition-delay: 0.12s;
+          transition-delay: 0.12s;
+  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--spin.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  -webkit-transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+.hamburger--spin.is-active .hamburger-inner::after {
+  bottom: 0;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/*Estilos Generales*/
+body.scroll-down .Header {
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+}
+body.scroll-up .Header {
+  -webkit-transform: none;
+          transform: none;
+}
+body.scroll-up:not(.is-active) .Header {
+  background: var(--azul-085);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-box-shadow: 0 0 10px rgb(255, 0, 0);
+          box-shadow: 0 0 10px rgb(255, 0, 0);
+}
+
+.block {
+  -webkit-filter: blur(5px) brightness(0.7);
+          filter: blur(5px) brightness(0.7);
+  -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: fixed;
+}
+
+.wrapper {
+  width: 90%;
+  margin: auto;
+}
+
+/*Header*/
+.Header {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  width: 100%;
+  height: 100px;
+  background-color: var(--azul-085);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  font-family: var(--tipo-secundario);
+  font-size: 0.8125rem;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+}
+.Header-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+.Header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (max-width: 764px) {
+  .Header-nav {
+    display: none;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .Header-nav.is-active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: min(75vw, 400px);
+    height: 100vh;
+    outline: 0;
+    -webkit-transform: translateX(0vw);
+            transform: translateX(0vw);
+    -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+.Header-menu {
+  display: none;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+@media screen and (max-width: 764px) {
+  .Header-menu {
+    display: block;
+    z-index: 10;
+  }
+}
+.Header-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (max-width: 764px) {
+  .Header-ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.Header-li {
+  counter-increment: item 1;
+  margin: 0 0.625rem;
+}
+@media screen and (max-width: 764px) {
+  .Header-li {
+    margin: 1rem 0;
+    font-size: 1.125em;
+  }
+}
+.Header-link {
+  color: var(--gris-med);
+}
+.Header-li a:hover {
+  color: var(--verde);
+}
+.Header-li a::before {
+  content: "0" counter(item) ".";
+  color: var(--verde);
+  margin-right: 0.3125em;
+}
+.Header-logo {
+  max-width: 4rem;
+}
+@media screen and (max-width: 764px) {
+  .Header-extras {
+    margin: 2rem 0;
+  }
+}
+.Header-btn {
+  background-color: transparent;
+  border: 1px solid var(--verde);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 0.625rem;
+  color: var(--verde);
+}
+@media screen and (max-width: 764px) {
+  .Header-btn {
+    font-size: 1.125em;
+    margin-left: 0;
+  }
+}
+.Header-btn:hover {
+  background-color: var(--verde-1);
+  outline: none;
+}
+
+/*General Section*/
+/*Section Intro*/
+.Intro {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Intro-wrapper {
+  width: 90%;
+  max-width: 62em;
+}
+.Intro-h1 {
+  margin: 0 0 30px 4px;
+  font-family: var(--tipo-secundario);
+  font-size: clamp(14px, 5vw, 16px);
+  font-weight: 400;
+  line-height: 1.1em;
+  color: var(--verde);
+}
+.Intro-h2 {
+  margin: 0;
+  font-family: var(--tipo-principal);
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 600;
+  line-height: 1.1em;
+  color: var(--gris-light);
+}
+.Intro-h3 {
+  font-family: var(--tipo-principal);
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 600;
+  line-height: 1.1em;
+  color: var(--gris-dark);
+}
+.Intro-p {
+  margin: 20px 0 0;
+  max-width: 626px;
+  font-family: var(--tipo-principal);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6em;
+  color: var(--gris-dark);
+}
+
+/*Section About*/
+.About {
+  background-color: lightgrey;
+}
+/*Section Experience*/
+.Experience {
+  background-color: lightgrey;
+}
+/*Section Projects*/
+.Projects {
+  background-color: lightgrey;
+}
+/*Section Contact*/
+.Contact {
+  background-color: lightgrey;
+}
+/*Footer*/
+.Footer-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  min-height: 70px;
+  padding: 15px;
+  text-align: center;
+}
+.Footer-rrss {
+  display: none;
+}
+@media screen and (max-width: 764px) {
+  .Footer-rrss {
+    display: block;
+    width: 100%;
+    max-width: 270px;
+    margin: 0 auto 10px;
+    color: var(--gris-med);
+  }
+}
+.Footer-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.Footer-a {
+  padding: 10px;
+}
+.Footer-svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+}
+/*Sidebar*/
+@media screen and (max-width: 764px) {
+  .Sidebar {
+    display: none;
+  }
+}
+.Sidebar-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Sidebar-rrss {
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 66px;
+  right: auto;
+  z-index: 12;
+  color: var(--gris-med);
+}
+@media screen and (max-width: 1200px) {
+  .Sidebar-rrss {
+    left: 0px;
+  }
+}
+.Sidebar-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.Sidebar-ul::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0 auto;
+  background-color: var(--gris-med);
+}
+.Sidebar-li {
+  padding: 10px;
+}
+.Sidebar-li:last-of-type {
+  margin-bottom: 20px;
+}
+.Sidebar-svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  vertical-align: middle;
+}
+.Sidebar-a:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  color: var(--verde);
+}
+.Sidebar-email {
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  left: auto;
+  right: 66px;
+  z-index: 12;
+  color: var(--gris-med);
+}
+@media screen and (max-width: 1200px) {
+  .Sidebar-email {
+    right: 0px;
+  }
+}
+.Sidebar-email .Sidebar-a {
+  margin: 20px auto;
+  font-family: var(--tipo-secundario);
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+}
