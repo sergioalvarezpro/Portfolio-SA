@@ -1,7 +1,6 @@
 @import "_reset", '_mixins', 'hamburgers/hamburgers.scss';
 
 /*Estilos Generales*/
-
 body {
 
     &.scroll-down .Header {
@@ -179,7 +178,6 @@ body {
         font-weight: 400;
         line-height: 1.1em;
         color: var(--verde);
-
     }
 
     &-h2 {
@@ -264,7 +262,6 @@ body {
 
 /*Footer*/
 .Footer {
-
     &-wrapper {
         @include flex(flex, column, nowrap, center, center);
         height: auto;
@@ -273,51 +270,61 @@ body {
         text-align: center;
     }
 
+    /*Footer-rrss*/
     &-rrss {
         display: none;
+
+        &-ul {
+            @include flex(flex, row, wrap, space-between, center);
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        &-a {
+            padding: 10px;
+        }
+
+        &-svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+        }
 
         @include media() {
             display: block;
             width: 100%;
-            max-width: 270px;
+            max-width: 200px;
             margin: 0 auto 10px;
             color: var(--gris-med);
         }
     }
 
-    &-ul {
-        @include flex(flex, row, wrap, space-between, center);
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-
-    &-a {
+    /*Footer-credit*/
+    &-credit {
+        color: var(--gris-med);
+        font-family: var(--tipo-secundario);
+        font-size: 12px;
+        line-height: 1;
         padding: 10px;
+
+        &-a:last-of-type {
+            margin-top: 10px;
+        }
     }
-
-    &-svg {
-        width: 20px;
-        height: 20px;
-        fill: none;
-    }
-
-
-    &-h3 {}
-
-    &-wrapper {}
 }
 
 /*Sidebar*/
 .Sidebar {
-    @include media() {
-        display: none;
-    }
-
     &-wrapper {
         @include flex(flex, column, nowrap, center, center);
     }
 
+    @include media() {
+        display: none;
+    }
+
+    /*Sidebar-rrss*/
     &-rrss {
         width: 40px;
         position: fixed;
@@ -327,46 +334,47 @@ body {
         z-index: 12;
         color: var(--gris-med);
 
+        &-ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        &-ul::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 90px;
+            margin: 0 auto;
+            background-color: var(--gris-med);
+        }
+
+        &-li {
+            padding: 10px;
+        }
+
+        &-li:last-of-type {
+            margin-bottom: 20px;
+        }
+
+        &-svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            vertical-align: middle;
+        }
+
+        &-a:hover {
+            transform: translateY(-3px);
+            color: var(--verde);
+        }
+
         @include media(1200px) {
             left: 0px;
         }
     }
 
-    &-ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    &-ul::after {
-        content: "";
-        display: block;
-        width: 1px;
-        height: 90px;
-        margin: 0 auto;
-        background-color: var(--gris-med);
-    }
-
-    &-li {
-        padding: 10px;
-    }
-
-    &-li:last-of-type {
-        margin-bottom: 20px;
-    }
-
-    &-svg {
-        width: 20px;
-        height: 20px;
-        fill: none;
-        vertical-align: middle;
-    }
-
-    &-a:hover {
-        transform: translateY(-3px);
-        color: var(--verde);
-    }
-
+    /*Sidebar-email*/
     &-email {
         width: 40px;
         position: fixed;
@@ -376,18 +384,41 @@ body {
         z-index: 12;
         color: var(--gris-med);
 
+        &-ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        &-ul::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 90px;
+            margin: 0 auto;
+            background-color: var(--gris-med);
+        }
+
+        &-li {
+            padding: 10px;
+        }
+
+        &-a {
+            margin: 20px auto;
+            font-family: var(--tipo-secundario);
+            font-size: 12px;
+            line-height: 18px;
+            letter-spacing: .1em;
+            writing-mode: vertical-rl;
+        }
+
+        &-a:hover {
+            transform: translateY(-3px);
+            color: var(--verde);
+        }
+
         @include media(1200px) {
             right: 0px;
         }
     }
-
-    &-email &-a {
-        margin: 20px auto;
-        font-family: var(--tipo-secundario);
-        font-size: 12px;
-        line-height: 18px;
-        letter-spacing: .1em;
-        writing-mode: vertical-rl;
-    }
-
 }
