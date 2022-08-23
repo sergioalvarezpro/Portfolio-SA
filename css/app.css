@@ -25,7 +25,7 @@
   /*body*/
   --azul-085: rgba(10, 25, 47, .85);
   /*Header*/
-  --verde: #64ffda;
+  --verde: rgb(100, 255, 218);
   /*Color Coorporativo*/
   --verde-1: rgba(100, 255, 218, .1);
   --blanco: #ececec;
@@ -372,6 +372,49 @@ body.scroll-up:not(.is-active) .Header {
   margin: auto;
 }
 
+.title-section-h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+  margin: 10px 0 40px;
+  font-family: var(--tipo-secundario);
+  font-size: clamp(26px, 5vw, 32px);
+  font-weight: 600;
+  color: var(--gris-light);
+  line-height: 1.1em;
+}
+.title-section-h2::before {
+  bottom: 4px;
+  counter-increment: item 1;
+  content: "0" counter(item) ".";
+  margin-right: 10px;
+  color: var(--verde);
+  font-family: var(--tipo-secundario);
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 400;
+}
+.title-section-h2::after {
+  content: "";
+  display: block;
+  top: -5px;
+  width: 300px;
+  height: 1px;
+  margin-left: 20px;
+  background-color: var(--gris-light);
+}
+
 /*Header*/
 .Header {
   display: -webkit-inline-box;
@@ -486,7 +529,7 @@ body.scroll-up:not(.is-active) .Header {
   }
 }
 .Header-li {
-  counter-increment: item 1;
+  counter-increment: section 1;
   margin: 0 0.625rem;
 }
 @media screen and (max-width: 764px) {
@@ -502,7 +545,7 @@ body.scroll-up:not(.is-active) .Header {
   color: var(--verde);
 }
 .Header-li a::before {
-  content: "0" counter(item) ".";
+  content: "0" counter(section) ".";
   color: var(--verde);
   margin-right: 0.3125em;
 }
@@ -539,7 +582,10 @@ body.scroll-up:not(.is-active) .Header {
 /*General Section*/
 /*Section Intro*/
 .Intro {
+  max-width: 1000px;
   min-height: 100vh;
+  margin: 0 auto;
+  padding: 100px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -554,9 +600,10 @@ body.scroll-up:not(.is-active) .Header {
       -ms-flex-align: center;
           align-items: center;
 }
-.Intro-wrapper {
-  width: 90%;
-  max-width: 62em;
+@media screen and (max-width: 764px) {
+  .Intro {
+    padding: 60px 0;
+  }
 }
 .Intro-h1 {
   margin: 0 0 30px 4px;
@@ -593,11 +640,110 @@ body.scroll-up:not(.is-active) .Header {
 
 /*Section About*/
 .About {
-  background-color: lightgrey;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 0;
 }
+@media screen and (max-width: 764px) {
+  .About {
+    padding: 60px 0;
+  }
+}
+.About-info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 50px 2fr;
+  grid-template-columns: 3fr 2fr;
+  gap: 50px;
+}
+@media screen and (max-width: 764px) {
+  .About-info {
+    display: block;
+  }
+}
+.About-text-p {
+  margin: 0 0 15px;
+}
+.About-text-p:last-of-type {
+  margin: 0;
+}
+.About-skills {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(140px, 200px) 10px minmax(140px, 200px);
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 0 10px;
+  padding: 0;
+  margin: 20px 0 0;
+  overflow: hidden;
+  list-style: none;
+}
+.About-skills-li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-family: var(--tipo-secundario);
+  font-size: 13px;
+}
+.About-skills-li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--verde);
+  font-size: 14px;
+  line-height: 12px;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+.About-image {
+  position: relative;
+  max-width: 300px;
+}
+@media screen and (max-width: 764px) {
+  .About-image {
+    margin: 50px auto 0;
+    width: 70%;
+  }
+}
+.About-picture {
+  width: 100%;
+  position: relative;
+  border-radius: 4px;
+  background-color: var(--verde);
+  -webkit-box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+          box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+.About-picture::after {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border: 2px solid var(--verde);
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+  content: "";
+  display: block;
+  position: absolute;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+.About-img {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  border-radius: 4px;
+  mix-blend-mode: multiply;
+}
+.About-img:hover {
+  mix-blend-mode: normal;
+}
+
 /*Section Experience*/
 .Experience {
-  background-color: lightgrey;
+  max-width: 700px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 100px 0;
 }
 /*Section Projects*/
 .Projects {
