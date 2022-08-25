@@ -60,7 +60,7 @@ body {
             width: 300px;
             height: 1px;
             margin-left: 20px;
-            background-color: var(--gris-light);
+            background-color: var(--azul-med);
         }
     }
 }
@@ -356,8 +356,113 @@ body {
     min-height: 100vh;
     padding: 100px 0;
 
-    &-wrapper {}
+    &-jobs {
+        display: flex;
+
+        @include media(700px) {
+            min-height: 340px;
+        }
+    }
+
+    &-tablist {
+        position: relative;
+        z-index: 3;
+        width: max-content;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &-tablink {
+        text-decoration: none;
+        text-decoration-skip-ink: auto;
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 42px;
+        padding: 0 20px 2px;
+        border-left: 2px solid var(--azul-med);
+        background-color: transparent;
+        color: var(--gris-dark);
+        font-family: var(--tipo-secundario);
+        font-size: 13px;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    &-tablink:hover,
+    .active {
+        background-color: var(--azul-dark);
+        color: var(--verde);
+        outline: 0;
+    }
+
+    &-select {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 42px;
+        border-radius: 4px;
+        background-color: var(--verde);
+        transform: translateY(calc(0 * 42px));
+        transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+    }
+
+    &-tabcontent {
+        position: relative;
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    &-tabinfo {
+        width: 100%;
+        height: auto;
+        padding: 10px 5px;
+    }
+
+    &-title {
+        margin-bottom: 12px;
+        color: var(--gris-light);
+        font-size: 22px;
+        font-weight: 500;
+
+        span {
+            color: var(--verde);
+        }
+    }
+
+    &-data {
+        margin-bottom: 25px;
+        color: var(--gris-med);
+        font-family: var(--tipo-secundario);
+        font-size: 13px;
+    }
+
+    &-items {
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+        font-size: 16px;
+    }
+
+    &-item {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+
+        &::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--verde);
+            box-sizing: inherit;
+        }
+    }
 }
+
 
 /*Section Projects*/
 .Projects {

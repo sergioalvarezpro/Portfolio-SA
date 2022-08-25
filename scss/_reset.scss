@@ -183,6 +183,12 @@ label {
     appearance: none;
 }
 
+button {
+    cursor: pointer;
+    border: 0;
+    border-radius: 0;
+}
+
 /* Reseteamos las tablas */
 table,
 tr,
@@ -208,9 +214,9 @@ body {
     min-height: 100vh;
     font-size: 100%;
     font-family: var(--tipo-principal);
-    color: var(--blanco);
+    color: var(--gris-dark);
     /* opcional */
-    line-height: 1.4em;
+    line-height: 1.3em;
     /* opcional */
     -webkit-hyphens: auto;
     -ms-hyphens: auto;

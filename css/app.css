@@ -180,6 +180,12 @@ label {
   appearance: none;
 }
 
+button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 0;
+}
+
 /* Reseteamos las tablas */
 table,
 tr,
@@ -205,9 +211,9 @@ body {
   min-height: 100vh;
   font-size: 100%;
   font-family: var(--tipo-principal);
-  color: var(--blanco);
+  color: var(--gris-dark);
   /* opcional */
-  line-height: 1.4em;
+  line-height: 1.3em;
   /* opcional */
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
@@ -412,7 +418,7 @@ body.scroll-up:not(.is-active) .Header {
   width: 300px;
   height: 1px;
   margin-left: 20px;
-  background-color: var(--gris-light);
+  background-color: var(--azul-med);
 }
 
 /*Header*/
@@ -745,6 +751,115 @@ body.scroll-up:not(.is-active) .Header {
   min-height: 100vh;
   padding: 100px 0;
 }
+.Experience-jobs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media screen and (max-width: 700px) {
+  .Experience-jobs {
+    min-height: 340px;
+  }
+}
+.Experience-tablist {
+  position: relative;
+  z-index: 3;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.Experience-tablink {
+  text-decoration: none;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 42px;
+  padding: 0 20px 2px;
+  border-left: 2px solid var(--azul-med);
+  background-color: transparent;
+  color: var(--gris-dark);
+  font-family: var(--tipo-secundario);
+  font-size: 13px;
+  text-align: left;
+  white-space: nowrap;
+}
+.Experience-tablink:hover,
+.Experience .active {
+  background-color: var(--azul-dark);
+  color: var(--verde);
+  outline: 0;
+}
+.Experience-select {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 42px;
+  border-radius: 4px;
+  background-color: var(--verde);
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+  transition: -webkit-transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s, -webkit-transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+}
+.Experience-tabcontent {
+  position: relative;
+  width: 100%;
+  margin-left: 20px;
+}
+.Experience-tabinfo {
+  width: 100%;
+  height: auto;
+  padding: 10px 5px;
+}
+.Experience-title {
+  margin-bottom: 12px;
+  color: var(--gris-light);
+  font-size: 22px;
+  font-weight: 500;
+}
+.Experience-title span {
+  color: var(--verde);
+}
+.Experience-data {
+  margin-bottom: 25px;
+  color: var(--gris-med);
+  font-family: var(--tipo-secundario);
+  font-size: 13px;
+}
+.Experience-items {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  font-size: 16px;
+}
+.Experience-item {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+.Experience-item::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--verde);
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
 /*Section Projects*/
 .Projects {
   background-color: lightgrey;

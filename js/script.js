@@ -20,7 +20,7 @@ hamburger.addEventListener("click", function () {
 });
 
 
-
+/**Header show/hide */
 window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
     if (currentScroll == 0) {
@@ -39,3 +39,27 @@ window.addEventListener("scroll", () => {
     }
     lastScroll = currentScroll;
 });
+
+/**Vertical tabs */
+function openTab(event, link) {
+    let i,
+        tabLink, //Experience-tablink
+        tabInfo; //Experience-tabinfo
+    const active = " active";
+
+    tabInfo = document.querySelectorAll(".Experience-tabinfo");
+    for (i = 0; i < tabInfo.length; i++) {
+        tabInfo[i].style.display = "none";
+    }
+
+    tabLink = document.querySelectorAll(".Experience-tablink");
+    tabSelect = document.querySelector(".Experience-select");
+    for (i = 0; i < tabLink.length; i++) {
+        tabLink[i].className = tabLink[i].className.replace(" active", "");
+    }
+
+    document.getElementById(link).style.display = "block";
+    event.currentTarget.className += " active";
+}
+
+document.querySelector("#defaultOpen").click();
