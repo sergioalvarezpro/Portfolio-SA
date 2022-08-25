@@ -14,7 +14,7 @@ body {
     &.scroll-up:not(.is-active) .Header {
         background: var(--azul-085);
         backdrop-filter: blur(10px);
-        box-shadow: 0 0 10px rgba(255, 0, 0, 1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
     }
 }
 
@@ -398,17 +398,8 @@ body {
         outline: 0;
     }
 
-    &-select {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        left: 0;
-        width: 2px;
-        height: 42px;
-        border-radius: 4px;
-        background-color: var(--verde);
-        transform: translateY(calc(0 * 42px));
-        transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+    &-tablink.active {
+        border-left: 2px solid var(--verde);
     }
 
     &-tabcontent {

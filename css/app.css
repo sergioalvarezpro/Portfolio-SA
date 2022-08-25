@@ -361,8 +361,8 @@ body.scroll-up:not(.is-active) .Header {
   background: var(--azul-085);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  -webkit-box-shadow: 0 0 10px rgb(255, 0, 0);
-          box-shadow: 0 0 10px rgb(255, 0, 0);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 }
 
 .block {
@@ -799,21 +799,8 @@ body.scroll-up:not(.is-active) .Header {
   color: var(--verde);
   outline: 0;
 }
-.Experience-select {
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 2px;
-  height: 42px;
-  border-radius: 4px;
-  background-color: var(--verde);
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
-  transition: -webkit-transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
-  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
-  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s, -webkit-transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+.Experience-tablink.active {
+  border-left: 2px solid var(--verde);
 }
 .Experience-tabcontent {
   position: relative;

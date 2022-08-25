@@ -45,7 +45,6 @@ function openTab(event, link) {
     let i,
         tabLink, //Experience-tablink
         tabInfo; //Experience-tabinfo
-    const active = " active";
 
     tabInfo = document.querySelectorAll(".Experience-tabinfo");
     for (i = 0; i < tabInfo.length; i++) {
@@ -53,7 +52,6 @@ function openTab(event, link) {
     }
 
     tabLink = document.querySelectorAll(".Experience-tablink");
-    tabSelect = document.querySelector(".Experience-select");
     for (i = 0; i < tabLink.length; i++) {
         tabLink[i].className = tabLink[i].className.replace(" active", "");
     }
