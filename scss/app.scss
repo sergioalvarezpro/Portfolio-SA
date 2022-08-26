@@ -16,6 +16,10 @@ body {
         backdrop-filter: blur(10px);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
     }
+
+    @include media(480px) {
+        font-size: 18px;
+    }
 }
 
 .block {
@@ -32,7 +36,8 @@ body {
 
 .title-section {
     &-h2 {
-        @include flex(flex, row, nowrap, start, center);
+        display: flex;
+        align-items: center;
         position: relative;
         width: 100%;
         margin: 10px 0 40px;
@@ -41,6 +46,7 @@ body {
         font-weight: 600;
         color: var(--gris-light);
         line-height: 1.1em;
+        white-space: nowrap;
 
         &::before {
             bottom: 4px;
@@ -51,6 +57,11 @@ body {
             font-family: var(--tipo-secundario);
             font-size: clamp(16px, 3vw, 20px);
             font-weight: 400;
+
+            @include media(480px) {
+                margin-bottom: -3px;
+                margin-right: 5px;
+            }
         }
 
         &::after {
@@ -61,6 +72,15 @@ body {
             height: 1px;
             margin-left: 20px;
             background-color: var(--azul-med);
+
+            @include media() {
+                width: 100%;
+                margin-left: 10px;
+            }
+
+            @include media(1080px) {
+                width: 200px;
+            }
         }
     }
 }
@@ -356,11 +376,19 @@ body {
     min-height: 100vh;
     padding: 100px 0;
 
+    @include media() {
+        padding: 80px 0;
+    }
+
     &-jobs {
         display: flex;
 
         @include media(700px) {
             min-height: 340px;
+        }
+
+        @include media() {
+            display: block;
         }
     }
 
@@ -371,6 +399,15 @@ body {
         padding: 0;
         margin: 0;
         list-style: none;
+
+        @include media() {
+            display: flex;
+            overflow-x: auto;
+            width: calc(100% + 100px);
+            padding-left: 50px;
+            margin-left: -50px;
+            margin-bottom: 30px;
+        }
     }
 
     &-tablink {
@@ -389,6 +426,15 @@ body {
         font-size: 13px;
         text-align: left;
         white-space: nowrap;
+
+        @include media() {
+            @include flex(flex, row, nowrap, center, center);
+            min-width: 120px;
+            padding: 0 15px;
+            border-left: 0;
+            border-bottom: 2px solid var(--azul-med);
+            text-align: center;
+        }
     }
 
     &-tablink:hover,
@@ -406,6 +452,10 @@ body {
         position: relative;
         width: 100%;
         margin-left: 20px;
+
+        @include media() {
+            margin-left: 0;
+        }
     }
 
     &-tabinfo {

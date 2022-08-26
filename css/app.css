@@ -364,6 +364,11 @@ body.scroll-up:not(.is-active) .Header {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 }
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 18px;
+  }
+}
 
 .block {
   -webkit-filter: blur(5px) brightness(0.7);
@@ -382,13 +387,6 @@ body.scroll-up:not(.is-active) .Header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -400,6 +398,7 @@ body.scroll-up:not(.is-active) .Header {
   font-weight: 600;
   color: var(--gris-light);
   line-height: 1.1em;
+  white-space: nowrap;
 }
 .title-section-h2::before {
   bottom: 4px;
@@ -411,6 +410,12 @@ body.scroll-up:not(.is-active) .Header {
   font-size: clamp(16px, 3vw, 20px);
   font-weight: 400;
 }
+@media screen and (max-width: 480px) {
+  .title-section-h2::before {
+    margin-bottom: -3px;
+    margin-right: 5px;
+  }
+}
 .title-section-h2::after {
   content: "";
   display: block;
@@ -419,6 +424,17 @@ body.scroll-up:not(.is-active) .Header {
   height: 1px;
   margin-left: 20px;
   background-color: var(--azul-med);
+}
+@media screen and (max-width: 764px) {
+  .title-section-h2::after {
+    width: 100%;
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .title-section-h2::after {
+    width: 200px;
+  }
 }
 
 /*Header*/
@@ -751,6 +767,11 @@ body.scroll-up:not(.is-active) .Header {
   min-height: 100vh;
   padding: 100px 0;
 }
+@media screen and (max-width: 764px) {
+  .Experience {
+    padding: 80px 0;
+  }
+}
 .Experience-jobs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -759,6 +780,11 @@ body.scroll-up:not(.is-active) .Header {
 @media screen and (max-width: 700px) {
   .Experience-jobs {
     min-height: 340px;
+  }
+}
+@media screen and (max-width: 764px) {
+  .Experience-jobs {
+    display: block;
   }
 }
 .Experience-tablist {
@@ -770,6 +796,18 @@ body.scroll-up:not(.is-active) .Header {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+@media screen and (max-width: 764px) {
+  .Experience-tablist {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: auto;
+    width: calc(100% + 100px);
+    padding-left: 50px;
+    margin-left: -50px;
+    margin-bottom: 30px;
+  }
 }
 .Experience-tablink {
   text-decoration: none;
@@ -793,6 +831,28 @@ body.scroll-up:not(.is-active) .Header {
   text-align: left;
   white-space: nowrap;
 }
+@media screen and (max-width: 764px) {
+  .Experience-tablink {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-width: 120px;
+    padding: 0 15px;
+    border-left: 0;
+    border-bottom: 2px solid var(--azul-med);
+    text-align: center;
+  }
+}
 .Experience-tablink:hover,
 .Experience .active {
   background-color: var(--azul-dark);
@@ -806,6 +866,11 @@ body.scroll-up:not(.is-active) .Header {
   position: relative;
   width: 100%;
   margin-left: 20px;
+}
+@media screen and (max-width: 764px) {
+  .Experience-tabcontent {
+    margin-left: 0;
+  }
 }
 .Experience-tabinfo {
   width: 100%;
