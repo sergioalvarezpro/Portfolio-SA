@@ -61,3 +61,9 @@ function openTab(event, link) {
 }
 
 document.querySelector("#defaultOpen").click();
+
+
+/**Button show more with JS
+ * 
+ * https://www.w3schools.com/howto/howto_js_read_more.asp
+*/
