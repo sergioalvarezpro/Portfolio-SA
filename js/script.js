@@ -63,7 +63,35 @@ function openTab(event, link) {
 document.querySelector("#defaultOpen").click();
 
 
-/**Button show more with JS
+/**Button Show More with JS
  * 
  * https://www.w3schools.com/howto/howto_js_read_more.asp
 */
+
+function showMore() {
+    let i;
+    let x;
+    let dots = document.querySelectorAll(".dots");
+    let more = document.querySelectorAll(".Showmore");
+    let btnText = document.querySelector("#btn-showMore");
+
+    for (i = 0; i < dots.length; i++) {
+
+        if (dots[i].style.display === "none") {
+            dots[i].style.display = "inline";
+            btnText.innerHTML = "Show More";
+
+            for (x = 0; x < more.length; x++) {
+                more[x].style.display = "none";
+            }
+        } else {
+            dots[i].style.display = "none";
+            btnText.innerHTML = "Show Less";
+
+            for (x = 0; x < more.length; x++) {
+                more[x].style.display = "inline";
+            }
+        }
+    }
+
+}

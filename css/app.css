@@ -582,7 +582,7 @@ body.scroll-up:not(.is-active) .Header {
   border: 1px solid var(--verde);
   border-radius: 0.25rem;
   padding: 0.75rem 1rem;
-  line-height: 1;
+  line-height: 1em;
   text-decoration: none;
   cursor: pointer;
   margin-left: 0.625rem;
@@ -1162,6 +1162,9 @@ body.scroll-up:not(.is-active) .Header {
   position: relative;
   z-index: 1;
 }
+.Projects-links-link:hover {
+  color: var(--verde);
+}
 .Projects-links-svg {
   width: 20px;
   height: 20px;
@@ -1413,6 +1416,29 @@ body.scroll-up:not(.is-active) .Header {
 .Other-tech-list-item:not(:last-of-type) {
   margin-right: 15px;
 }
+.Other-more {
+  color: var(--verde);
+  background-color: transparent;
+  border: 1px solid var(--verde);
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: var(--tipo-secundario);
+  line-height: 1em;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 1.25rem 1.75rem;
+  margin: 80px auto 0;
+}
+.Other-more:hover {
+  background-color: var(--verde-1);
+  outline: none;
+}
+
+.dots {
+  display: none;
+}
 
 /*Section Contact*/
 .Contact {
@@ -1483,7 +1509,7 @@ body.scroll-up:not(.is-active) .Header {
   color: var(--gris-med);
   font-family: var(--tipo-secundario);
   font-size: 12px;
-  line-height: 1;
+  line-height: 1em;
   padding: 10px;
 }
 .Footer-credit-a:last-of-type {

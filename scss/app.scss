@@ -191,7 +191,7 @@ body {
         border: 1px solid var(--verde);
         border-radius: .25rem;
         padding: 0.75rem 1rem;
-        line-height: 1;
+        line-height: 1em;
         text-decoration: none;
         cursor: pointer;
         // transition: var(--transition);
@@ -702,6 +702,10 @@ body {
             padding: 10px;
             position: relative;
             z-index: 1;
+
+            &:hover {
+                color: var(--verde);
+            }
         }
 
         &-svg {
@@ -924,10 +928,30 @@ body {
         }
     }
 
+    &-more {
+        color: var(--verde);
+        background-color: transparent;
+        border: 1px solid var(--verde);
+        border-radius: 4px;
+        font-size: 13px;
+        font-family: var(--tipo-secundario);
+        line-height: 1em;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all .25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        padding: 1.25rem 1.75rem;
+        margin: 80px auto 0;
 
+        &:hover {
+            background-color: var(--verde-1);
+            outline: none;
+        }
+    }
 }
 
-
+.dots {
+    display: none;
+}
 
 /*Section Contact*/
 .Contact {
@@ -983,7 +1007,7 @@ body {
         color: var(--gris-med);
         font-family: var(--tipo-secundario);
         font-size: 12px;
-        line-height: 1;
+        line-height: 1em;
         padding: 10px;
 
         &-a:last-of-type {
