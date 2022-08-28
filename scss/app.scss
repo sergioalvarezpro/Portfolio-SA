@@ -947,10 +947,14 @@ body {
             outline: none;
         }
     }
-}
 
-.dots {
-    display: none;
+    &-showmore {
+        display: none;
+    }
+
+    &-active {
+        display: block;
+    }
 }
 
 /*Section Contact*/
