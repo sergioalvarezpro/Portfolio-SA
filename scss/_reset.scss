@@ -1,60 +1,14 @@
 @charset "UTF-8";
 
-/*
+@import "_variables";
 
+/*
   Con este reset vamos a resolver:
-    👉 Unificar el uso de Custom Properties
     👉 Problemas de box-model más generales
     👉 Problemas con imagenes, vídeos e iconos svg
     👉 Problemas con tipografías y etiquetas input en formularios
     👉 Unificar la tipografía de todas las etiquetas de una web
-
 */
-/* Aquí definimos las Custom properties */
-:root {
-    --gris-med: #A8B2D1;
-    /*Iconos RRSS, email*/
-    --gris-light: #CCD6F6;
-    /*titular, h1, h2, h3*/
-    --gris-dark: #8892B0;
-    /*texto*/
-    --azul-dark: #112240;
-    /*background tarjetas descripción proyecto*/
-    --azul-med: #233554;
-    /*hover button trabajos*/
-    --azul: #0A192F;
-    /*body*/
-    --azul-085: rgba(10, 25, 47, .85);
-    /*Header*/
-    --verde: rgb(100, 255, 218);
-    /*Color Coorporativo*/
-    --verde-1: rgba(100, 255, 218, .1);
-    --blanco: #ececec;
-    --negro: #181818;
-    /* Tipografía */
-    --tipo-principal: 'Inter', sans-serif;
-    --tipo-secundario: 'Roboto Mono', monospace;
-}
-
-/* Las adaptamos al modo claro */
-/* @media (prefers-color-scheme: light) {
-  :root {
-    --blanco: #181818;
-    --blanco-2: rgba(0, 0, 0, .2);
-    --negro: #e0e0e0;
-    --negro-5: rgba(255, 255, 255, 0.5);
-    --negro-7: rgba(255, 255, 255, 0.75);
-  }
-} */
-
-/* Las adaptamos al modo oscuro */
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --negro: #ececec;     
-    --blanco  : #181818;
-    --gris    : grey;
-  }
-}
 
 /* Opcional */
 /* Configuramos si un usuario ha activado el modo alto contraste. (WD) */
@@ -96,7 +50,7 @@ figure {
     object-position: center center;
 }
 
-/* Reseteamos los enlaces para funcionar como cajas... */
+/* Reseteamos los enlaces para funcionar como cajas */
 a {
     display: block;
     text-decoration: none;
@@ -142,24 +96,30 @@ em {
     color: inherit;
 }
 
-/* Evitamos problemas con los pseudoelementos de quotes */
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+/* Evitamos problemas con los pseudo-elementos de quotes */
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
     content: "";
     content: none;
 }
 
 /* Configuramos el texto que seleccionamos */
 ::-moz-selection {
-    background-color: var(--negro);
-    color: var(--blanco);
+    background-color: $negro;
+    color: $blanco;
 }
 
 ::selection {
-    background-color: var(--negro);
-    color: var(--blanco);
+    background-color: $negro;
+    color: $blanco;
+}
+
+/* Configuramos los pseudo-elementos */
+::before,
+::after {
+    box-sizing: inherit;
 }
 
 /* Nivelamos problemas de tipografías y colocación de formularios */
@@ -213,8 +173,8 @@ svg {
 body {
     min-height: 100vh;
     font-size: 100%;
-    font-family: var(--tipo-principal);
-    color: var(--gris-dark);
+    font-family: $tipo-principal;
+    color: $gris-dark;
     /* opcional */
     line-height: 1.3em;
     /* opcional */
@@ -228,6 +188,5 @@ body {
     /* opcional */
     -moz-osx-font-smoothing: grayscale;
     counter-reset: item;
-    background-color: var(--azul);
-
+    background-color: $azul;
 }

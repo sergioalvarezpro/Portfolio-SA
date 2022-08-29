@@ -1,0 +1,52 @@
+//          \|||/
+//          (o o)
+// ------ooO-(_)-Ooo------
+//        HERO STYLE
+
+@import "_variables", '_mixins';
+
+.Hero {
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 100px 0;
+    @include flex(flex, column, nowrap, center, center);
+
+    @include media() {
+        padding: 60px 0;
+    }
+
+    &-h1 {
+        margin: 0 0 30px 4px;
+        font-family: $tipo-secundario;
+        font-size: clamp(14px, 5vw, 16px);
+        //font-size: clamp(.875rem, 5vw, 1rem);
+        font-weight: 400;
+        line-height: 1.1em;
+        color: $verde;
+    }
+
+    &-h2 {
+        margin: 0;
+        font-size: clamp(40px, 8vw, 80px);
+        //font-size: clamp(6.66em, 8vw, 5em);
+        font-weight: 600;
+        line-height: 1.1em;
+        color: $gris-light;
+    }
+
+    &-h3 {
+        font-size: clamp(40px, 8vw, 80px);
+        //font-size: 5rem;
+        font-weight: 600;
+        line-height: 1.1em;
+    }
+
+    &-p {
+        margin: 20px 0 0;
+        max-width: 626px;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.6em;
+    }
+}
