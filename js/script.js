@@ -1,8 +1,8 @@
 /**
  * 
  * *´¨) 
-¸.•´¸.•*´¨) ¸.•*¨) 
-(¸.•´ (¸.•` ¤ Content: 
+ *¸.•´¸.•*´¨) ¸.•*¨) 
+ *(¸.•´ (¸.•` ¤ Content: 
  *                 1. Hamburger Menu
  *                 2. Sticky Header
  *                 3. Vertical Tab
@@ -17,7 +17,7 @@
  */
 
 /**
- * Hamburguer Menu
+ * 1. Hamburguer Menu
  * Reference: https://jonsuh.com/hamburgers/
  */
 function hamburgerMenu() {
@@ -38,7 +38,7 @@ function hamburgerMenu() {
 hamburgerMenu();
 
 /**
- * Sticky Header
+ * 2. Sticky Header
  */
 function stickyHeader() {
     const body = document.body;
@@ -69,7 +69,7 @@ function stickyHeader() {
 stickyHeader();
 
 /**
- * Vertical Tab
+ * 3. Vertical Tab
  */
 function openTab(event, link) {
     let tabLink = document.querySelectorAll(".Experience-tablink");
@@ -91,7 +91,7 @@ let defaultOpen = document.querySelector("#defaultOpen");
 defaultOpen.click();
 
 /**
- * Button Show More
+ * 4. Button Show More
 */
 function showMore() {
     let more = document.querySelectorAll(".Other-showmore");

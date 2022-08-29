@@ -1,4 +1,21 @@
 @charset "UTF-8";
+/**
+ * 
+ * *´¨) 
+ *¸.•´¸.•*´¨) ¸.•*¨) 
+ *(¸.•´ (¸.•` ¤ Content: 
+ *                 1. General Style
+ *                 2. Header Style
+ *                 3. Section Intro
+ *                 4. 
+ *                                              oooO
+ *                                             (....)     Oooo
+ *                                               ...(     (....)
+ *                                                ._)      )../
+ *                                                         (_/
+ *                                            Solo pasaba por aquí
+ *                                                  ¡Saludos!
+ */
 /*
 
   Con este reset vamos a resolver:
@@ -346,7 +363,9 @@ body {
   transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-/*Estilos Generales*/
+/*
+* General Style
+*/
 body.scroll-down .Header {
   -webkit-transform: translate3d(0, -100%, 0);
           transform: translate3d(0, -100%, 0);
@@ -435,7 +454,9 @@ body.scroll-up:not(.is-active) .Header {
   }
 }
 
-/*Header*/
+/*
+*Header Style
+*/
 .Header {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1444,10 +1465,105 @@ body.scroll-up:not(.is-active) .Header {
 
 /*Section Contact*/
 .Contact {
-  background-color: lightgrey;
+  max-width: 600px;
+  margin: 0 auto 100px;
+  padding: 100px 0;
+  text-align: center;
 }
+@media screen and (max-width: 764px) {
+  .Contact {
+    margin: 0 auto 50px;
+    padding: 80px 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Contact {
+    padding: 60px 0;
+  }
+}
+.Contact-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Contact-title {
+  position: relative;
+  margin: 10px 0 40px;
+  width: 100%;
+  font-size: clamp(26px, 5vw, 32px);
+  white-space: nowrap;
+}
+.Contact-title::before {
+  position: relative;
+  counter-increment: item 1;
+  content: "0" counter(item) ".";
+  margin-right: 10px;
+  color: var(--verde);
+  font-family: var(--tipo-secundario);
+  font-weight: 400;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+.Contact-overline {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--verde);
+  font-family: var(--tipo-secundario);
+  font-size: 16px;
+  font-weight: 400;
+}
+.Contact-overline::before {
+  bottom: 0;
+  font-size: 14px;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+.Contact-subtitle {
+  font-size: clamp(40px, 5vw, 60px);
+  margin: 0 0 10px;
+  font-weight: 600;
+  color: var(--gris-light);
+  line-height: 1.1em;
+}
+.Contact-text {
+  margin: 0;
+}
+.Contact-link {
+  color: var(--verde);
+  background-color: transparent;
+  border: 1px solid var(--verde);
+  border-radius: 4px;
+  padding: 1.25rem 1.75rem;
+  font-size: 14px;
+  font-family: var(--tipo-secundario);
+  line-height: 1em;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  margin-top: 50px;
+}
+.Contact-link:hover {
+  background-color: var(--verde-1);
+  outline: none;
+}
+
 /*Footer*/
 .Footer {
+  height: auto;
+  min-height: 70px;
+  padding: 15px;
+  text-align: center;
   /*Footer-rrss*/
   /*Footer-credit*/
 }
@@ -1465,10 +1581,6 @@ body.scroll-up:not(.is-active) .Header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: auto;
-  min-height: 70px;
-  padding: 15px;
-  text-align: center;
 }
 .Footer-rrss {
   display: none;
