@@ -1,9 +1,11 @@
-//          \|||/
-//          (o o)
-// ------ooO-(_)-Ooo------
-//      HEADER STYLE
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*      HEADER STYLE
+*/
 
-@import "_variables", '_mixins', './hamburgers/hamburgers';
+@import '_variables', '_mixins';
 
 .Header {
     display: inline-flex;
@@ -19,8 +21,8 @@
     transition: transform .8s;
 
     &-wrapper {
+        width: 94%;
         @include flex(flex, row, wrap, space-between, center);
-
     }
 
     &-nav {
@@ -123,7 +125,3 @@
         outline: none;
     }
 }
-
-//Settings Hamburger
-
-@use 'hamburgers' with ($hamburger-layer-color : $blanco);

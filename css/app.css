@@ -9,13 +9,14 @@
  *                  3. Mixins
  *                  4. General
  *                  5. Sidebar
- *                  6. Header
- *                  7. About
- *                  8. Experience
- *                  9. Projects
- *                  10. Others Projects
- *                  11. Contact
- *                  12. Footer
+ *                  6. Hamburger
+ *                  7. Header
+ *                  8. About
+ *                  9. Experience
+ *                  10. Projects
+ *                  11. Others Projects
+ *                  12. Contact
+ *                  13. Footer
  *                                              oooO
  *                                             (....)     Oooo
  *                                               ...(     (....)
@@ -29,13 +30,12 @@
 *          (o o)
 * ------ooO-(_)-Ooo------
 *          RESET
-*/
-/*
-  Con este reset vamos a resolver:
-    👉 Problemas de box-model más generales
-    👉 Problemas con imagenes, vídeos e iconos svg
-    👉 Problemas con tipografías y etiquetas input en formularios
-    👉 Unificar la tipografía de todas las etiquetas de una web
+*
+*Con este reset vamos a resolver:
+👉 Problemas de box-model más generales
+👉 Problemas con imagenes, vídeos e iconos svg
+👉 Problemas con tipografías y etiquetas input en formularios
+👉 Unificar la tipografía de todas las etiquetas de una web
 */
 /* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
 @media (prefers-reduced-motion: reduce) {
@@ -422,13 +422,17 @@ body.scroll-up:not(.is-active) .Header {
   color: #64ffda;
 }
 
-/*!
- * Hamburgers
- * @description Tasty CSS-animated hamburgers
- * @author Jonathan Suh @jonsuh
- * @site https://jonsuh.com/hamburgers
- * @link https://github.com/jonsuh/hamburgers
- */
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*        HAMBURGER
+*
+* @description Tasty CSS-animated hamburgers
+* @author Jonathan Suh @jonsuh
+* @site https://jonsuh.com/hamburgers
+* @link https://github.com/jonsuh/hamburgers
+*/
 .hamburger {
   padding: 15px 15px;
   display: inline-block;
@@ -542,6 +546,12 @@ body.scroll-up:not(.is-active) .Header {
   transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*      HEADER STYLE
+*/
 .Header {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -562,6 +572,7 @@ body.scroll-up:not(.is-active) .Header {
   transition: transform 0.8s, -webkit-transform 0.8s;
 }
 .Header-wrapper {
+  width: 94%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

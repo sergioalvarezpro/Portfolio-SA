@@ -4,17 +4,15 @@
 *          (o o)
 * ------ooO-(_)-Ooo------
 *          RESET
+*
+*Con este reset vamos a resolver:
+👉 Problemas de box-model más generales
+👉 Problemas con imagenes, vídeos e iconos svg
+👉 Problemas con tipografías y etiquetas input en formularios
+👉 Unificar la tipografía de todas las etiquetas de una web
 */
 
 @import "_variables";
-
-/*
-  Con este reset vamos a resolver:
-    👉 Problemas de box-model más generales
-    👉 Problemas con imagenes, vídeos e iconos svg
-    👉 Problemas con tipografías y etiquetas input en formularios
-    👉 Unificar la tipografía de todas las etiquetas de una web
-*/
 
 // Opcional
 // Configuramos si un usuario ha activado el modo alto contraste. (WD)
