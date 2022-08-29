@@ -24,6 +24,12 @@
  *                                            Solo pasaba por aquí
  *                                                  ¡Saludos!
  */
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*          RESET
+*/
 /*
   Con este reset vamos a resolver:
     👉 Problemas de box-model más generales
@@ -31,9 +37,6 @@
     👉 Problemas con tipografías y etiquetas input en formularios
     👉 Unificar la tipografía de todas las etiquetas de una web
 */
-/* Opcional */
-/* Configuramos si un usuario ha activado el modo alto contraste. (WD) */
-/* Opcional */
 /* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -62,8 +65,6 @@ figure {
   max-width: 100%;
   width: 100%;
   display: block;
-  /* opcional */
-  /* opcional */
   -o-object-position: center center;
   object-position: center center;
 }
@@ -156,7 +157,6 @@ label {
   background-color: transparent;
   color: inherit;
   display: block;
-  /* opcional */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -183,28 +183,18 @@ svg {
   fill: currentColor;
 }
 
-/* (Probándolo, no usar en producción) En el caso de añadir una  */
-/* p svg{
-  display: inline;
-  width: initial;
-} */
 /* Configuramos la tipografía para toda la web */
 body {
   min-height: 100vh;
   font-size: 100%;
   font-family: "Inter", sans-serif;
   color: #8892B0;
-  /* opcional */
   line-height: 1.3em;
-  /* opcional */
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-  /* opcional */
   font-smooth: always;
-  /* opcional */
   -webkit-font-smoothing: antialiased;
-  /* opcional */
   -moz-osx-font-smoothing: grayscale;
   counter-reset: item;
   background-color: #0a192f;
@@ -304,6 +294,134 @@ body.scroll-up:not(.is-active) .Header {
   }
 }
 
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*         SIDEBAR
+*/
+.Sidebar-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (max-width: 764px) {
+  .Sidebar {
+    display: none;
+  }
+}
+.Sidebar-rrss {
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 40px;
+  right: auto;
+  z-index: 12;
+  color: #A8B2D1;
+}
+@media screen and (max-width: 1080px) {
+  .Sidebar-rrss {
+    left: 20px;
+    right: auto;
+  }
+}
+@media screen and (max-width: 950px) {
+  .Sidebar-rrss {
+    left: -5px;
+  }
+}
+.Sidebar-rrss-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.Sidebar-rrss-ul::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0 auto;
+  background-color: #A8B2D1;
+}
+.Sidebar-rrss-li {
+  padding: 10px;
+}
+.Sidebar-rrss-li:last-of-type {
+  margin-bottom: 20px;
+}
+.Sidebar-rrss-svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  vertical-align: middle;
+}
+.Sidebar-rrss-a:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  color: #64ffda;
+}
+.Sidebar-email {
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  left: auto;
+  right: 40px;
+  z-index: 12;
+  color: #A8B2D1;
+}
+@media screen and (max-width: 1080px) {
+  .Sidebar-email {
+    left: auto;
+    right: 20px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .Sidebar-email {
+    right: -10px;
+  }
+}
+.Sidebar-email-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.Sidebar-email-ul::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0 auto;
+  background-color: #A8B2D1;
+}
+.Sidebar-email-li {
+  padding: 10px;
+}
+.Sidebar-email-a {
+  margin: 20px auto;
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+}
+.Sidebar-email-a:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  color: #64ffda;
+}
+
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -340,7 +458,7 @@ body.scroll-up:not(.is-active) .Header {
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: var(--verde);
+  background-color: #64ffda;
 }
 
 .hamburger-box {
@@ -358,7 +476,7 @@ body.scroll-up:not(.is-active) .Header {
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   width: 40px;
   height: 4px;
-  background-color: var(--verde);
+  background-color: #64ffda;
   border-radius: 4px;
   position: absolute;
   -webkit-transition-property: -webkit-transform;
@@ -587,6 +705,12 @@ body.scroll-up:not(.is-active) .Header {
   outline: none;
 }
 
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*        HERO STYLE
+*/
 .Hero {
   max-width: 1000px;
   min-height: 100vh;
@@ -639,6 +763,12 @@ body.scroll-up:not(.is-active) .Header {
   line-height: 1.6em;
 }
 
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*       ABOUT STYLE
+*/
 .About {
   max-width: 900px;
   margin: 0 auto;
@@ -738,6 +868,12 @@ body.scroll-up:not(.is-active) .Header {
           filter: none;
 }
 
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*    EXPERIENCE STYLE
+*/
 .Experience {
   max-width: 700px;
   margin: 0 auto;
@@ -885,6 +1021,12 @@ body.scroll-up:not(.is-active) .Header {
   color: #64ffda;
 }
 
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*     PROJECTS STYLE
+*/
 .Projects {
   margin: 0 auto;
   padding: 100px 0;
@@ -1195,6 +1337,12 @@ body.scroll-up:not(.is-active) .Header {
           filter: none;
 }
 
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*  OTHERS PROJECTS STYLE
+*/
 .Other {
   margin: 0 auto;
   padding: 100px 0;
@@ -1413,7 +1561,12 @@ body.scroll-up:not(.is-active) .Header {
   display: block;
 }
 
-/*Section Contact*/
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*         CONTACT
+*/
 .Contact {
   max-width: 600px;
   margin: 0 auto 100px;
@@ -1458,44 +1611,40 @@ body.scroll-up:not(.is-active) .Header {
   counter-increment: item 1;
   content: "0" counter(item) ".";
   margin-right: 10px;
-  color: var(--verde);
-  font-family: var(--tipo-secundario);
+  color: #64ffda;
+  font-family: "Roboto Mono", monospace;
   font-weight: 400;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
 }
 .Contact-overline {
   display: block;
   margin-bottom: 20px;
-  color: var(--verde);
-  font-family: var(--tipo-secundario);
+  color: #64ffda;
+  font-family: "Roboto Mono", monospace;
   font-size: 16px;
   font-weight: 400;
 }
 .Contact-overline::before {
   bottom: 0;
   font-size: 14px;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
 }
 .Contact-subtitle {
   font-size: clamp(40px, 5vw, 60px);
   margin: 0 0 10px;
   font-weight: 600;
-  color: var(--gris-light);
+  color: #CCD6F6;
   line-height: 1.1em;
 }
 .Contact-text {
   margin: 0;
 }
 .Contact-link {
-  color: var(--verde);
+  color: #64ffda;
   background-color: transparent;
-  border: 1px solid var(--verde);
+  border: 1px solid #64ffda;
   border-radius: 4px;
   padding: 1.25rem 1.75rem;
   font-size: 14px;
-  font-family: var(--tipo-secundario);
+  font-family: "Roboto Mono", monospace;
   line-height: 1em;
   text-decoration: none;
   cursor: pointer;
@@ -1504,18 +1653,21 @@ body.scroll-up:not(.is-active) .Header {
   margin-top: 50px;
 }
 .Contact-link:hover {
-  background-color: var(--verde-1);
+  background-color: rgba(100, 255, 218, 0.1);
   outline: none;
 }
 
-/*Footer*/
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*         FOOTER
+*/
 .Footer {
   height: auto;
   min-height: 70px;
   padding: 15px;
   text-align: center;
-  /*Footer-rrss*/
-  /*Footer-credit*/
 }
 .Footer-wrapper {
   display: -webkit-box;
@@ -1566,131 +1718,16 @@ body.scroll-up:not(.is-active) .Header {
     width: 100%;
     max-width: 200px;
     margin: 0 auto 10px;
-    color: var(--gris-med);
+    color: #A8B2D1;
   }
 }
 .Footer-credit {
-  color: var(--gris-med);
-  font-family: var(--tipo-secundario);
+  color: #A8B2D1;
+  font-family: "Roboto Mono", monospace;
   font-size: 12px;
   line-height: 1em;
   padding: 10px;
 }
 .Footer-credit-a:last-of-type {
   margin-top: 10px;
-}
-
-/*Sidebar*/
-.Sidebar {
-  /*Sidebar-rrss*/
-  /*Sidebar-email*/
-}
-.Sidebar-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-@media screen and (max-width: 764px) {
-  .Sidebar {
-    display: none;
-  }
-}
-.Sidebar-rrss {
-  width: 40px;
-  position: fixed;
-  bottom: 0;
-  left: 66px;
-  right: auto;
-  z-index: 12;
-  color: var(--gris-med);
-}
-.Sidebar-rrss-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.Sidebar-rrss-ul::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 90px;
-  margin: 0 auto;
-  background-color: var(--gris-med);
-}
-.Sidebar-rrss-li {
-  padding: 10px;
-}
-.Sidebar-rrss-li:last-of-type {
-  margin-bottom: 20px;
-}
-.Sidebar-rrss-svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  vertical-align: middle;
-}
-.Sidebar-rrss-a:hover {
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
-  color: var(--verde);
-}
-@media screen and (max-width: 1200px) {
-  .Sidebar-rrss {
-    left: 0px;
-  }
-}
-.Sidebar-email {
-  width: 40px;
-  position: fixed;
-  bottom: 0;
-  left: auto;
-  right: 66px;
-  z-index: 12;
-  color: var(--gris-med);
-}
-.Sidebar-email-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.Sidebar-email-ul::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 90px;
-  margin: 0 auto;
-  background-color: var(--gris-med);
-}
-.Sidebar-email-li {
-  padding: 10px;
-}
-.Sidebar-email-a {
-  margin: 20px auto;
-  font-family: var(--tipo-secundario);
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: 0.1em;
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-}
-.Sidebar-email-a:hover {
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
-  color: var(--verde);
-}
-@media screen and (max-width: 1200px) {
-  .Sidebar-email {
-    right: 0px;
-  }
 }

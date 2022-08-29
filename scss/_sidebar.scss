@@ -1,0 +1,126 @@
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*         SIDEBAR
+*/
+
+@import "_variables", "_mixins";
+
+.Sidebar {
+    &-wrapper {
+        @include flex(flex, column, nowrap, center, center);
+    }
+
+    @include media() {
+        display: none;
+    }
+
+    //Sidebar-rrss
+    &-rrss {
+        width: 40px;
+        position: fixed;
+        bottom: 0;
+        left: 40px;
+        right: auto;
+        z-index: 12;
+        color: $gris-med;
+
+        @include media(1080px) {
+            left: 20px;
+            right: auto;
+        }
+
+        @include media(950px) {
+            left: -5px;
+        }
+
+        &-ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        &-ul::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 90px;
+            margin: 0 auto;
+            background-color: $gris-med;
+        }
+
+        &-li {
+            padding: 10px;
+        }
+
+        &-li:last-of-type {
+            margin-bottom: 20px;
+        }
+
+        &-svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            vertical-align: middle;
+        }
+
+        &-a:hover {
+            transform: translateY(-3px);
+            color: $verde;
+        }
+    }
+
+    //Sidebar-email
+    &-email {
+        width: 40px;
+        position: fixed;
+        bottom: 0;
+        left: auto;
+        right: 40px;
+        z-index: 12;
+        color: $gris-med;
+
+        @include media(1080px) {
+            left: auto;
+            right: 20px;
+        }
+
+        @include media(950px) {
+            right: -10px;
+        }
+
+        &-ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        &-ul::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 90px;
+            margin: 0 auto;
+            background-color: $gris-med;
+        }
+
+        &-li {
+            padding: 10px;
+        }
+
+        &-a {
+            margin: 20px auto;
+            font-family: $tipo-secundario;
+            font-size: 12px;
+            line-height: 18px;
+            letter-spacing: .1em;
+            writing-mode: vertical-rl;
+        }
+
+        &-a:hover {
+            transform: translateY(-3px);
+            color: $verde;
+        }
+    }
+}

@@ -3,7 +3,7 @@
 // ------ooO-(_)-Ooo------
 //      HEADER STYLE
 
-@import "_variables", '_mixins', 'hamburgers/hamburgers.scss';
+@import "_variables", '_mixins', './hamburgers/hamburgers';
 
 .Header {
     display: inline-flex;
@@ -123,3 +123,7 @@
         outline: none;
     }
 }
+
+//Settings Hamburger
+
+@use 'hamburgers' with ($hamburger-layer-color : $blanco);

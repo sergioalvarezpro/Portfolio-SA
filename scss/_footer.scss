@@ -1,0 +1,62 @@
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*         FOOTER
+*/
+
+@import "_variables", "_mixins";
+
+.Footer {
+    height: auto;
+    min-height: 70px;
+    padding: 15px;
+    text-align: center;
+
+    &-wrapper {
+        @include flex(flex, column, nowrap, center, center);
+    }
+
+    //Footer-rrss
+    &-rrss {
+        display: none;
+
+        &-ul {
+            @include flex(flex, row, wrap, space-between, center);
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        &-a {
+            padding: 10px;
+        }
+
+        &-svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+        }
+
+        @include media() {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto 10px;
+            color: $gris-med;
+        }
+    }
+
+    //Footer-credit
+    &-credit {
+        color: $gris-med;
+        font-family: $tipo-secundario;
+        font-size: 12px;
+        line-height: 1em;
+        padding: 10px;
+
+        &-a:last-of-type {
+            margin-top: 10px;
+        }
+    }
+}

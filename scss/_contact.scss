@@ -1,0 +1,94 @@
+/**
+*          \|||/
+*          (o o)
+* ------ooO-(_)-Ooo------
+*         CONTACT
+*/
+
+@import "_variables", "_mixins";
+
+.Contact {
+    max-width: 600px;
+    margin: 0 auto 100px;
+    padding: 100px 0;
+    text-align: center;
+
+    @include media() {
+        margin: 0 auto 50px;
+        padding: 80px 0;
+    }
+
+    @include media(480px) {
+        padding: 60px 0;
+    }
+
+    &-wrapper {
+        @include flex(flex, column, nowrap, center, center);
+    }
+
+    &-title {
+        position: relative;
+        margin: 10px 0 40px;
+        width: 100%;
+        font-size: clamp(26px, 5vw, 32px);
+        white-space: nowrap;
+
+        &::before {
+            position: relative;
+            counter-increment: item 1;
+            content: "0" counter(item) ".";
+            margin-right: 10px;
+            color: $verde;
+            font-family: $tipo-secundario;
+            font-weight: 400;
+        }
+    }
+
+    &-overline {
+        display: block;
+        margin-bottom: 20px;
+        color: $verde;
+        font-family: $tipo-secundario;
+        font-size: 16px;
+        font-weight: 400;
+
+        &::before {
+            bottom: 0;
+            font-size: 14px;
+        }
+    }
+
+    &-subtitle {
+        //h2
+        font-size: clamp(40px, 5vw, 60px);
+        margin: 0 0 10px;
+        font-weight: 600;
+        color: $gris-light;
+        line-height: 1.1em;
+    }
+
+    &-text {
+        //p
+        margin: 0;
+    }
+
+    &-link {
+        color: $verde;
+        background-color: transparent;
+        border: 1px solid $verde;
+        border-radius: 4px;
+        padding: 1.25rem 1.75rem;
+        font-size: 14px;
+        font-family: $tipo-secundario;
+        line-height: 1em;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all .25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        margin-top: 50px;
+
+        &:hover {
+            background-color: $verde-1;
+            outline: none;
+        }
+    }
+}
