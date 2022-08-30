@@ -175,9 +175,12 @@ svg {
 //}
 /* Configuramos la tipografía para toda la web */
 body {
+    display: block;
+    width: 100%;
     min-height: 100vh;
-    font-size: 100%;
+    margin: 0;
     font-family: $tipo-principal;
+    font-size: 20px;
     color: $gris-dark;
     // opcional
     line-height: 1.3em;
@@ -191,4 +194,5 @@ body {
     -moz-osx-font-smoothing: grayscale;
     counter-reset: item;
     background-color: $azul;
+    overflow-x: hidden;
 }

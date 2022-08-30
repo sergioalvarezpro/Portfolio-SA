@@ -22,17 +22,35 @@
  */
 function hamburgerMenu() {
     // Look for .hamburger
-    let hamburger = document.querySelector(".Header-menu");
-    let nav = document.querySelector(".Header-nav");
-    let main = document.querySelector(".Main");
+    let hamburger = document.querySelector('.Header-menu');
+    let nav = document.querySelector('.Header-aside');
+    let HeaderLiMobile = document.querySelectorAll('.Header-li-mobile');
+    let body = document.querySelector('body');
     // On click
     hamburger.addEventListener("click", function () {
         // Toggle class "is-active"
         hamburger.classList.toggle("is-active");
-        nav.classList.toggle("is-active");
-        main.classList.toggle("block");
+        nav.classList.add("aside-active");
+        body.classList.add("blur");
         // Do something else, like open/close menu
+
+        if (!hamburger.classList.contains("is-active")) {
+            nav.classList.remove("aside-active");
+            body.classList.remove("blur");
+        }
     });
+
+
+
+    for (let li of HeaderLiMobile) {
+        li.addEventListener("click", function () {
+            hamburger.classList.remove("is-active");
+            nav.classList.remove("aside-active");
+            body.classList.remove("blur");
+            body.classList.remove("scroll-down");
+            body.classList.remove("scroll-up");
+        });
+    }
 }
 
 hamburgerMenu();

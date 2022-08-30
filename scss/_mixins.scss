@@ -12,7 +12,7 @@
     }
 }
 
-@mixin media($medida: 764px) {
+@mixin media($medida: 784px) {
     @media screen and (max-width:$medida) {
         @content
     }

@@ -9,6 +9,25 @@
 
 body {
 
+
+    /**
+    * Header-aside
+    */
+    &.blur {
+        overflow: hidden;
+
+        & .Main,
+        & .Footer {
+            filter: blur(5px) brightness(0.7);
+            transition: $transition;
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+
+    /**
+    * Sticky Header
+    */
     &.scroll-down .Header {
         transform: translate3d(0, -100%, 0);
     }
@@ -23,20 +42,14 @@ body {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
     }
 
+
     @include media(480px) {
         font-size: 18px;
     }
 }
 
-.block {
-    filter: blur(5px) brightness(0.7);
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-    position: fixed;
-}
-
 .wrapper {
     width: 90%;
-    // max-width: 75em;
     margin: auto;
 }
 

@@ -21,11 +21,18 @@
     filter: none !important;
     pointer-events: auto !important;
     user-select: auto !important;
-    // font-family: $tipo-secundario;
-    // font-size: .8125rem; //13px
-    // transition: transform .8s;
+
+    @include media(1080px) {
+        padding: 0 40px;
+    }
+
+    @include media() {
+        padding: 0 25px;
+        height: 70px;
+    }
 
     &-wrapper {
+        //nav
         @include flex(flex, row, nowrap, space-between, center);
         position: relative;
         width: 100%;
@@ -33,43 +40,15 @@
         font-family: $tipo-secundario;
         counter-reset: section 0;
         z-index: 12;
-
-        // @include media() {
-        //     display: none;
-        //     order: 2;
-
-        //     &.is-active {
-        //         display: flex;
-        //         flex-direction: column;
-        //         position: fixed;
-        //         z-index: 9;
-        //         top: 0;
-        //         bottom: 0;
-        //         right: 0;
-        //         width: min(75vw, 400px);
-        //         height: 100vh;
-        //         outline: 0;
-        //         transform: translateX(0vw);
-        //         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-        //     }
-        // }
     }
 
     &-logo {
-
         @include flex(flex, row, nowrap, center, center);
-        // max-width: 6rem;
-        // position: relative;
-        // margin-left: -30px;
-
-        // @include media() {
-        //     margin-left: 0;
-        // }
     }
 
     &-icon {
-        width: 42px;
-        height: 42px;
+        width: 84px;
+        height: 84px;
     }
 
     &-svg {
@@ -79,9 +58,13 @@
         user-select: none;
     }
 
-    &-nav {
+    &-list {
         display: flex;
-        align-items: center
+        align-items: center;
+
+        @include media() {
+            display: none;
+        }
     }
 
     &-ol {
@@ -136,20 +119,55 @@
 
     &-mobile {
         display: none;
+
+        @include media() {
+            display: block;
+        }
     }
 
     &-menu {
         display: none;
-        order: 1;
 
         @include media() {
-            display: block;
+            @include flex(flex, row, nowrap, center, center);
+            position: relative;
             z-index: 10;
+            margin-right: -15px;
+            padding: 15px;
+            border: 0px;
+            background-color: transparent;
+            color: inherit;
+            text-transform: none;
+            transition-timing-function: linear;
+            transition-duration: 0.15s;
+            transition-property: opacity, filter;
         }
     }
 
     &-aside {
-        display: none;
+
+        @include media() {
+            @include flex(flex, row, nowrap, center, center);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            padding: 50px 10px;
+            width: min(75vw, 400px);
+            height: 100vh;
+            outline: 0;
+            background-color: $azul-dark;
+            box-shadow: $box-shadow;
+            z-index: 9;
+            transform: translateX(100vw);
+            visibility: hidden;
+            transition: $transition;
+
+            &.aside-active {
+                transform: translateX(0vw);
+                visibility: visible;
+            }
+        }
     }
 
     &-nav-mobile {
@@ -172,6 +190,14 @@
         margin: 0 auto 20px;
         counter-increment: section 1;
         font-size: clamp(14px, 4vw, 18px);
+
+        &::before {
+            content: "0" counter(section) ".";
+            display: block;
+            margin-bottom: 5px;
+            color: $verde;
+            font-size: 14px;
+        }
     }
 
     &-link-mobile {
@@ -205,49 +231,4 @@
             outline: none;
         }
     }
-
-
-
-
-
-    // &-ul {
-    //     @include flex(flex, row, nowrap, center, center);
-
-    //     @include media() {
-    //         flex-direction: column;
-    //     }
-    // }
-
-    // &-li {
-
-    //     counter-increment: section 1;
-    //     margin: 0 .625rem;
-
-    //     @include media() {
-    //         margin: 1rem 0;
-    //         font-size: 1.125em;
-    //     }
-    // }
-
-    // &-link {
-    //     color: $gris-med;
-    // }
-
-    // &-li a:hover {
-    //     color: $verde;
-    // }
-
-    // &-li a::before {
-    //     content: "0" counter(section) ".";
-    //     color: $verde;
-    //     margin-right: .3125em;
-    // }
-
-    // &-extras {
-    //     @include media() {
-    //         margin: 2rem 0;
-    //     }
-    // }
-
-
 }
