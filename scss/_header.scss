@@ -78,7 +78,7 @@
         margin: 0 5px;
         position: relative;
         counter-increment: section 1;
-        font-size: 13px;
+        @include font-size(13);
     }
 
     &-link {
@@ -88,7 +88,7 @@
             content: "0" counter(section) ".";
             margin-right: 5px;
             color: $verde;
-            font-size: 12px;
+            @include font-size(12);
             text-align: right;
         }
 
@@ -109,7 +109,7 @@
         cursor: pointer;
         transition: $transition;
         margin-left: 15px;
-        font-size: 13px;
+        @include font-size(13);
 
         &:hover {
             background-color: $verde-1;
@@ -189,14 +189,14 @@
         position: relative;
         margin: 0 auto 20px;
         counter-increment: section 1;
-        font-size: clamp(14px, 4vw, 18px);
+        @include clamp(14, 4, 18);
 
         &::before {
             content: "0" counter(section) ".";
             display: block;
             margin-bottom: 5px;
             color: $verde;
-            font-size: 14px;
+            @include font-size(14);
         }
     }
 
@@ -216,7 +216,7 @@
         background-color: transparent;
         border: 1px solid $verde;
         border-radius: 4px;
-        font-size: 14px;
+        @include font-size(14);
         font-family: $tipo-secundario;
         line-height: 1em;
         text-decoration: none;

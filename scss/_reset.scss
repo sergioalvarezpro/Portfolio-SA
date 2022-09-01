@@ -12,7 +12,7 @@
 👉 Unificar la tipografía de todas las etiquetas de una web
 */
 
-@import "_variables";
+@import "_variables", "_mixins";
 
 // Opcional
 // Configuramos si un usuario ha activado el modo alto contraste. (WD)
@@ -180,7 +180,7 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: $tipo-principal;
-    font-size: 20px;
+    @include font-size($fz-body);
     color: $gris-dark;
     // opcional
     line-height: 1.3em;

@@ -12,6 +12,24 @@
     }
 }
 
+@mixin font-size($size) {
+    $rem: $size / $fz-body;
+    font-size: $rem * 1rem;
+}
+
+@mixin line-height($size) {
+    $rem: $size / $fz-body;
+    line-height: $rem * 1rem;
+}
+
+@mixin clamp($max, $val, $min) {
+    $Vmax: ($max / $fz-body) * 1rem;
+    $VVal: $val * 1vw;
+    $Vmin: ($min / $fz-body) * 1rem;
+
+    font-size: clamp($Vmax, $VVal, $Vmin);
+}
+
 @mixin media($medida: 784px) {
     @media screen and (max-width:$medida) {
         @content

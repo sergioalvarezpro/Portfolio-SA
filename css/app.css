@@ -190,7 +190,7 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: "Inter", sans-serif;
-  font-size: 20px;
+  font-size: 1rem;
   color: #8892B0;
   line-height: 1.3em;
   -webkit-hyphens: auto;
@@ -697,7 +697,7 @@ body.scroll-up:not(.is-active) .Header {
   margin: 0 5px;
   position: relative;
   counter-increment: section 1;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 .Header-link {
   padding: 10px;
@@ -706,7 +706,7 @@ body.scroll-up:not(.is-active) .Header {
   content: "0" counter(section) ".";
   margin-right: 5px;
   color: #64ffda;
-  font-size: 12px;
+  font-size: 0.75rem;
   text-align: right;
 }
 .Header-link:hover {
@@ -725,7 +725,7 @@ body.scroll-up:not(.is-active) .Header {
   -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   margin-left: 15px;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 .Header-btn:hover {
   background-color: rgba(100, 255, 218, 0.1);
@@ -843,14 +843,14 @@ body.scroll-up:not(.is-active) .Header {
   position: relative;
   margin: 0 auto 20px;
   counter-increment: section 1;
-  font-size: clamp(14px, 4vw, 18px);
+  font-size: clamp(0.875rem, 4vw, 1.125rem);
 }
 .Header-li-mobile::before {
   content: "0" counter(section) ".";
   display: block;
   margin-bottom: 5px;
   color: #64ffda;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .Header-link-mobile {
   display: inline-block;
@@ -869,7 +869,7 @@ body.scroll-up:not(.is-active) .Header {
   background-color: transparent;
   border: 1px solid #64ffda;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-family: "Roboto Mono", monospace;
   line-height: 1em;
   text-decoration: none;
