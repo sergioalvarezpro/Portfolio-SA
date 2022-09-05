@@ -13,26 +13,18 @@
     flex-direction: column;
     align-items: center;
 
-    // @include media() {
-    //     padding: 80px 0;
-    // }
-
-    // @include media(480px) {
-    //     padding: 60px 0;
-    // }
-
     &-title-h2 {
-        font-size: clamp(24px, 5vw, 32px);
-        margin: 0px 0px 10px;
+        @include clamp(24, 5, 32);
+        margin: 0 0 .5rem;
         font-weight: 600;
         color: $gris-light;
-        line-height: 1.1em;
         text-align: center;
+        @include line-height(1.1);
     }
 
     &-link {
         font-family: $tipo-secundario;
-        font-size: 14px;
+        @include font-size(14);
         color: $verde;
         text-align: center;
     }
@@ -40,7 +32,7 @@
     &-grid {
         list-style: none;
         padding: 0;
-        margin: 50px 0 0;
+        margin: 2.5rem 0 0;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 15px;
@@ -52,25 +44,24 @@
     }
 
     &-inner {
-        box-shadow: $box-shadow;
         @include flex(flex, column, nowrap, space-between, flex-start);
         position: relative;
         height: 100%;
         padding: 2rem 1.75rem;
         border-radius: 4px;
         background-color: $azul-dark;
-        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        box-shadow: $box-shadow;
+        transition: $transition;
         overflow: auto;
 
         &:hover {
             transform: translateY(-7px);
-            box-shadow: $box-shadow;
         }
     }
 
     &-top {
         @include flex(flex, row, nowrap, space-between, center);
-        margin-bottom: 35px;
+        margin-bottom: 1.75rem;
     }
 
     &-folder {
@@ -78,8 +69,8 @@
     }
 
     &-svg {
-        width: 40px;
-        height: 40px;
+        width: 2rem;
+        height: 2rem;
         fill: none;
         vertical-align: middle;
     }
@@ -87,13 +78,13 @@
     &-links {
         display: flex;
         align-items: center;
-        margin-right: -10px;
+        margin-right: -0.5rem;
         color: $gris-med;
     }
 
     &-external {
         @include flex(flex, row, nowrap, center, center);
-        padding: 5px 7px;
+        padding: .25rem .35rem;
         position: relative;
         z-index: 1;
 
@@ -102,18 +93,18 @@
         }
 
         &-svg {
-            width: 20px;
-            height: 20px;
+            width: 1rem;
+            height: 1rem;
             fill: none;
             vertical-align: middle;
         }
     }
 
     &-title-h3 {
-        margin: 0 0 10px;
+        margin: 0 0 .5rem;
         color: $gris-light;
-        font-size: 22px;
-        line-height: 1.2em;
+        @include font-size(22);
+        @include line-height(1.2);
         font-weight: 600;
     }
 
@@ -128,7 +119,7 @@
 
     &-description {
         color: $gris-med;
-        font-size: 17px;
+        @include font-size(17);
 
         &-p:last-of-type {
             margin: 0;
@@ -141,16 +132,16 @@
         flex-grow: 1;
         flex-wrap: wrap;
         padding: 0;
-        margin: 20px 0 0;
+        margin: 1rem 0 0;
         list-style: none;
 
         &-item {
             font-family: $tipo-secundario;
-            font-size: 12px;
-            line-height: 1.75em;
+            @include font-size(12);
+            @include line-height(1.75);
 
             &:not(:last-of-type) {
-                margin-right: 15px;
+                margin-right: .75rem;
             }
         }
     }
@@ -160,14 +151,14 @@
         background-color: transparent;
         border: 1px solid $verde;
         border-radius: 4px;
-        font-size: 13px;
+        @include font-size(13);
         font-family: $tipo-secundario;
-        line-height: 1em;
+        @include line-height(1);
         text-decoration: none;
         cursor: pointer;
-        transition: all .25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: $transition;
         padding: 1.25rem 1.75rem;
-        margin: 80px auto 0;
+        margin: 4rem auto 0;
 
         &:hover {
             background-color: $verde-1;

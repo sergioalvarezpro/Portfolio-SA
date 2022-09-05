@@ -15,9 +15,9 @@
     &-h1 {
         margin: 0 0 1.5rem 0.2rem;
         font-family: $tipo-secundario;
-        @include clamp(11, 5, 13);
-        line-height: 1.1em;
         color: $verde;
+        @include clamp(11, 5, 13);
+        @include line-height(1.1);
     }
 
     &-h2 {
@@ -26,9 +26,9 @@
 
     &-h2,
     &-h3 {
-        @include clamp(32, 8, 64);
         font-weight: 600;
-        line-height: 1.1em;
+        @include clamp(32, 8, 64);
+        @include line-height(1.1);
     }
 
     &-p {
@@ -36,6 +36,6 @@
         margin: 1rem 0 0;
         font-weight: 400;
         @include font-size(20);
-        line-height: 1.6em;
+        @include line-height(1.6);
     }
 }

@@ -18,8 +18,7 @@
 }
 
 @mixin line-height($size) {
-    $rem: $size / $fz-body;
-    line-height: $rem * 1rem;
+    line-height: $size * 1em;
 }
 
 @mixin clamp($max, $val, $min) {

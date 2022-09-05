@@ -10,12 +10,12 @@
 .Footer {
     height: auto;
     min-height: 70px;
-    padding: 15px;
-    margin-top: 100px;
+    padding: .75rem;
+    margin-top: 5rem;
     text-align: center;
 
     @include media() {
-        margin-top: 50px;
+        margin-top: 2.5rem;
     }
 
     &-wrapper {
@@ -34,12 +34,12 @@
         }
 
         &-a {
-            padding: 10px;
+            padding: .5rem;
         }
 
         &-svg {
-            width: 20px;
-            height: 20px;
+            width: 1.5rem;
+            height: 1.5rem;
             fill: none;
         }
 
@@ -47,7 +47,7 @@
             display: block;
             width: 100%;
             max-width: 200px;
-            margin: 0 auto 10px;
+            margin: 0 auto .5rem;
             color: $gris-med;
         }
     }
@@ -56,12 +56,12 @@
     &-credit {
         color: $gris-med;
         font-family: $tipo-secundario;
-        font-size: 12px;
-        line-height: 1em;
-        padding: 10px;
+        padding: .5rem;
+        @include font-size(12);
+        @include line-height(1);
 
         &-a:last-of-type {
-            margin-top: 10px;
+            margin-top: .5rem;
         }
     }
 }

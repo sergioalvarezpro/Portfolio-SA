@@ -8,12 +8,12 @@
 @import "_variables", "_mixins";
 
 .Sidebar {
-    &-wrapper {
-        @include flex(flex, column, nowrap, center, center);
-    }
-
     @include media() {
         display: none;
+    }
+
+    &-wrapper {
+        @include flex(flex, column, nowrap, center, center);
     }
 
     &-rrss,
@@ -24,9 +24,9 @@
         z-index: 12;
         color: $gris-med;
 
-        @include media(950px) {
-            left: -0.25rem;
-        }
+        // @include media(950px) {
+        //     left: -0.25rem;
+        // }
     }
 
     &-rrss {
@@ -34,7 +34,7 @@
         right: auto;
 
         @include media(1080px) {
-            left: 1rem;
+            left: .25rem;
             right: auto;
         }
     }
@@ -45,7 +45,7 @@
 
         @include media(1080px) {
             left: auto;
-            right: 1rem;
+            right: .25rem;
         }
     }
 
@@ -76,9 +76,7 @@
         margin: 1rem auto;
         font-family: $tipo-secundario;
         @include font-size(12);
-        // font-size: 12px;
-        @include line-height(18);
-        // line-height: 18px;
+        @include line-height(1.1);
         letter-spacing: .1em;
         writing-mode: vertical-rl;
     }

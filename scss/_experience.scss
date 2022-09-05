@@ -9,12 +9,6 @@
 
 .Experience {
     max-width: 700px;
-    // margin: 0 auto;
-    // padding: 100px 0;
-
-    // @include media() {
-    //     padding: 80px 0;
-    // }
 
     &-jobs {
         display: flex;
@@ -58,7 +52,7 @@
         border-left: 2px solid $azul-med;
         background-color: transparent;
         font-family: $tipo-secundario;
-        font-size: 13px;
+        @include font-size(13);
         text-align: left;
         white-space: nowrap;
 
@@ -102,7 +96,7 @@
     &-title {
         margin-bottom: 12px;
         color: $gris-light;
-        font-size: 22px;
+        @include font-size(22);
         font-weight: 500;
 
         span {
@@ -114,14 +108,14 @@
         margin-bottom: 25px;
         color: $gris-med;
         font-family: $tipo-secundario;
-        font-size: 13px;
+        @include font-size(13);
     }
 
     &-items {
-        padding: 0px;
-        margin: 0px;
+        padding: 0;
+        margin: 0;
         list-style: none;
-        font-size: 16px;
+        @include font-size(16);
     }
 
     &-item {

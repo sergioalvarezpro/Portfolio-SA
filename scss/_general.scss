@@ -38,11 +38,11 @@ body {
     &.scroll-up:not(.is-active) .Header {
         background: $azul-085;
         backdrop-filter: blur(10px);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 0 .5rem rgba(0, 0, 0, .35);
     }
 
     @include media(480px) {
-        font-size: 18px;
+        @include font-size(18);
     }
 }
 
@@ -70,42 +70,41 @@ body {
         align-items: center;
         position: relative;
         width: 100%;
-        margin: 10px 0 40px;
+        margin: .5rem 0 2rem;
         font-family: $tipo-secundario;
-        font-size: clamp(26px, 5vw, 32px);
         font-weight: 600;
         color: $gris-light;
-        line-height: 1.1em;
         white-space: nowrap;
+        @include clamp(26, 5, 32);
+        @include line-height(1.1);
 
         &::before {
             bottom: 4px;
             counter-increment: item 1;
             content: "0" counter(item) ".";
-            margin-right: 10px;
+            margin-right: .5rem;
             color: $verde;
             font-family: $tipo-secundario;
-            font-size: clamp(16px, 3vw, 20px);
-            font-weight: 400;
+            @include clamp(16, 3, 20);
 
             @include media(480px) {
-                margin-bottom: -3px;
-                margin-right: 5px;
+                margin-bottom: -.15rem;
+                margin-right: .25rem;
             }
         }
 
         &::after {
             content: "";
             display: block;
-            top: -5px;
+            top: -.25rem;
             width: 300px;
             height: 1px;
-            margin-left: 20px;
+            margin-left: 1rem;
             background-color: $azul-med;
 
             @include media() {
                 width: 100%;
-                margin-left: 10px;
+                margin-left: .5rem;
             }
 
             @include media(1080px) {
