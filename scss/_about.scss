@@ -9,12 +9,6 @@
 
 .About {
     max-width: 900px;
-    margin: 0 auto;
-    padding: 100px 0;
-
-    @include media() {
-        padding: 60px 0;
-    }
 
     &-info {
         display: grid;

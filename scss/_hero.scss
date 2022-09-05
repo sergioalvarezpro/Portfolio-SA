@@ -9,46 +9,33 @@
 
 .Hero {
     max-width: 1000px;
-    min-height: 100vh;
-    margin: 0 auto;
-    padding: 100px 0;
+    min-height: 80vh;
     @include flex(flex, column, nowrap, center, center);
 
-    @include media() {
-        padding: 60px 0;
-    }
-
     &-h1 {
-        margin: 0 0 30px 4px;
+        margin: 0 0 1.5rem 0.2rem;
         font-family: $tipo-secundario;
-        font-size: clamp(14px, 5vw, 16px);
-        //font-size: clamp(.875rem, 5vw, 1rem);
-        font-weight: 400;
+        @include clamp(11, 5, 13);
         line-height: 1.1em;
         color: $verde;
     }
 
     &-h2 {
-        margin: 0;
-        font-size: clamp(40px, 8vw, 80px);
-        //font-size: clamp(6.66em, 8vw, 5em);
-        font-weight: 600;
-        line-height: 1.1em;
         color: $gris-light;
     }
 
+    &-h2,
     &-h3 {
-        font-size: clamp(40px, 8vw, 80px);
-        //font-size: 5rem;
+        @include clamp(32, 8, 64);
         font-weight: 600;
         line-height: 1.1em;
     }
 
     &-p {
-        margin: 20px 0 0;
         max-width: 626px;
-        font-size: 20px;
+        margin: 1rem 0 0;
         font-weight: 400;
+        @include font-size(20);
         line-height: 1.6em;
     }
 }

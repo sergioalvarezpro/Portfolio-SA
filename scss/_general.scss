@@ -9,7 +9,6 @@
 
 body {
 
-
     /**
     * Header-aside
     */
@@ -42,9 +41,21 @@ body {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
     }
 
-
     @include media(480px) {
         font-size: 18px;
+    }
+}
+
+.Main-section {
+    padding: 5rem 0;
+    margin: 0 auto;
+
+    @include media() {
+        padding: 4rem 0;
+    }
+
+    @include media(480px) {
+        padding: 3rem 0;
     }
 }
 

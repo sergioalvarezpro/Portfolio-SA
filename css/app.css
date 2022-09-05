@@ -252,6 +252,21 @@ body.scroll-up:not(.is-active) .Header {
   }
 }
 
+.Main-section {
+  padding: 5rem 0;
+  margin: 0 auto;
+}
+@media screen and (max-width: 784px) {
+  .Main-section {
+    padding: 4rem 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Main-section {
+    padding: 3rem 0;
+  }
+}
+
 .wrapper {
   width: 90%;
   margin: auto;
@@ -866,9 +881,7 @@ body.scroll-up:not(.is-active) .Header {
 */
 .Hero {
   max-width: 1000px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 100px 0;
+  min-height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -883,36 +896,26 @@ body.scroll-up:not(.is-active) .Header {
       -ms-flex-align: center;
           align-items: center;
 }
-@media screen and (max-width: 784px) {
-  .Hero {
-    padding: 60px 0;
-  }
-}
 .Hero-h1 {
-  margin: 0 0 30px 4px;
+  margin: 0 0 1.5rem 0.2rem;
   font-family: "Roboto Mono", monospace;
-  font-size: clamp(14px, 5vw, 16px);
-  font-weight: 400;
+  font-size: clamp(0.6875rem, 5vw, 0.8125rem);
   line-height: 1.1em;
   color: #64ffda;
 }
 .Hero-h2 {
-  margin: 0;
-  font-size: clamp(40px, 8vw, 80px);
-  font-weight: 600;
-  line-height: 1.1em;
   color: #CCD6F6;
 }
-.Hero-h3 {
-  font-size: clamp(40px, 8vw, 80px);
+.Hero-h2, .Hero-h3 {
+  font-size: clamp(2rem, 8vw, 4rem);
   font-weight: 600;
   line-height: 1.1em;
 }
 .Hero-p {
-  margin: 20px 0 0;
   max-width: 626px;
-  font-size: 20px;
+  margin: 1rem 0 0;
   font-weight: 400;
+  font-size: 1.25rem;
   line-height: 1.6em;
 }
 
@@ -924,13 +927,6 @@ body.scroll-up:not(.is-active) .Header {
 */
 .About {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 100px 0;
-}
-@media screen and (max-width: 784px) {
-  .About {
-    padding: 60px 0;
-  }
 }
 .About-info {
   display: -ms-grid;
@@ -1029,13 +1025,6 @@ body.scroll-up:not(.is-active) .Header {
 */
 .Experience {
   max-width: 700px;
-  margin: 0 auto;
-  padding: 100px 0;
-}
-@media screen and (max-width: 784px) {
-  .Experience {
-    padding: 80px 0;
-  }
 }
 .Experience-jobs {
   display: -webkit-box;
@@ -1181,14 +1170,7 @@ body.scroll-up:not(.is-active) .Header {
 *     PROJECTS STYLE
 */
 .Projects {
-  margin: 0 auto;
-  padding: 100px 0;
   max-width: 1000px;
-}
-@media screen and (max-width: 784px) {
-  .Projects {
-    padding: 80px 0;
-  }
 }
 .Projects-list {
   list-style: none;
@@ -1506,8 +1488,6 @@ body.scroll-up:not(.is-active) .Header {
 *  OTHERS PROJECTS STYLE
 */
 .Other {
-  margin: 0 auto;
-  padding: 100px 0;
   max-width: 1000px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1519,16 +1499,6 @@ body.scroll-up:not(.is-active) .Header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-@media screen and (max-width: 784px) {
-  .Other {
-    padding: 80px 0;
-  }
-}
-@media screen and (max-width: 480px) {
-  .Other {
-    padding: 60px 0;
-  }
 }
 .Other-title-h2 {
   font-size: clamp(24px, 5vw, 32px);
@@ -1731,20 +1701,7 @@ body.scroll-up:not(.is-active) .Header {
 */
 .Contact {
   max-width: 600px;
-  margin: 0 auto 100px;
-  padding: 100px 0;
   text-align: center;
-}
-@media screen and (max-width: 784px) {
-  .Contact {
-    margin: 0 auto 50px;
-    padding: 80px 0;
-  }
-}
-@media screen and (max-width: 480px) {
-  .Contact {
-    padding: 60px 0;
-  }
 }
 .Contact-wrapper {
   display: -webkit-box;
@@ -1829,7 +1786,13 @@ body.scroll-up:not(.is-active) .Header {
   height: auto;
   min-height: 70px;
   padding: 15px;
+  margin-top: 100px;
   text-align: center;
+}
+@media screen and (max-width: 784px) {
+  .Footer {
+    margin-top: 50px;
+  }
 }
 .Footer-wrapper {
   display: -webkit-box;
