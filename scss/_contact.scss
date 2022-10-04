@@ -46,7 +46,7 @@
     }
 
     &-subtitle {
-        @include clamp(40, 5, 60);
+        @include clamp(32, 5, 40);
         margin: 0 0 .5rem;
         font-weight: 600;
         color: $gris-light;

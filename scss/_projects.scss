@@ -137,6 +137,10 @@
             position: relative;
             z-index: 1;
         }
+
+        &-link:hover {
+            color: $verde;
+        }
     }
 
     &-description {
