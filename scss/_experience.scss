@@ -58,8 +58,8 @@
 
         @include media() {
             @include flex(flex, row, nowrap, center, center);
-            min-width: 120px;
-            padding: 0 15px;
+            min-width: 7.5rem;
+            padding: 0 5.3rem;
             border-left: 0;
             border-bottom: 2px solid $azul-med;
             text-align: center;
