@@ -1,4 +1,4 @@
-# Portfolio SA
+# Portfolio S|A FRONTEND DEVELOPER
  Portfolio personal implementado con JavaScript, HTML & SASS, y metodología SUITCSS.
 
 ## ⌨️ Descripción
