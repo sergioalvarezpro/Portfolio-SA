@@ -1,3 +1,5 @@
+[![Header](https://sergioalvarez.eu/assets/image-RRSS/pantalla_SA.png "Header")](https://sergioalvarez.eu)
+
 # Portfolio S|A FRONTEND DEVELOPER
  Portfolio personal implementado con JavaScript, HTML & SASS, y metodología SUITCSS.
 
